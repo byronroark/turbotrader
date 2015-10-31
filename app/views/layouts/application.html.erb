@@ -7,8 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <div class="navbar navbar-default">
+    <ul class="list-unstyled list-inline">
+      <li><h1>turbotrader</h1></li>
+      <li><%= link_to 'Dashboard', items_path %></li>
+      <li>Support</li>
+      <% if current_user %>
+      <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+      <li>Logged in as <%= current_user.email %></li>
+      <% else %>
+      <li><%= link_to 'Sign In', new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+<div class="main">
+  <%= yield %>
+</div>
 
 </body>
 </html>

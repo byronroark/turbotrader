@@ -1,0 +1,23 @@
+<div class="page-header">
+ <%= button_to 'Add Item', new_item_path, class: "btn btn-default", method: :get %>
+</div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Item name</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Current Price</th>
+      </tr>
+    </thead>
+
+    <tbody id="item_list">
+      <%= render @items %>
+    </tbody>
+  </table>
+  <p>
+  <% if @search %>
+    Back to <%= link_to 'Home', items_path %>
+  <% end %>
+  <p>
+</div>
