@@ -7,7 +7,7 @@ gem 'rails', '4.2.4'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'omniauth'
-gem 'omniauth-github'
+gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'font-awesome-sass'
 
