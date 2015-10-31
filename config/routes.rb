@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users#, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
   root 'pages#home'
   get '/about', to: 'pages#about', as: :about
-  get '/contact-us', to: 'pages#contact', as: :contact
+  get '/contact_us', to: 'pages#contact', as: :contact
 
-  resources :items
+  get '/login', to: 'devise/sessions#new', as: :login
+
+  resources :items do
+    collection do
+      get :search
+    end
+  end
 end
