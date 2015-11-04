@@ -21,9 +21,9 @@
               <%= f.label :remember_me %>
             </div>
             <% end -%>
-            <%= f.submit t('.sign_in', :default => "Sign in"), class: "btn btn-success" %>
+            <%= f.submit t('.sign_in', :default => "Sign in"), class: "btn btn-lg btn-success btn-block" %>
 
-            <%= link_to omniauth_authorize_path(resource_name, :facebook), class: "btn btn-primary" do %>
+            <%= link_to omniauth_authorize_path(resource_name, :facebook), class: "btn btn-lg btn-primary btn-block" do %>
             <i class="fa fa-lg fa-facebook-square"></i>
             <%= t('.sign_in_with_provider', provider: "facebook".titleize, :default => "Sign in with Facebook") %>
             <% end %>

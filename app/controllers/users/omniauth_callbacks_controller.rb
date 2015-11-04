@@ -12,6 +12,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def failure
-    render text: "Nope, something failed!"
+    render text: "Facebook failed to authenticate."
   end
 end
