@@ -3,7 +3,8 @@ class Item < ActiveRecord::Base
   validates :collection, uniqueness: { scope: :user_id, message: "You already have a collection with this name." }
   validates :description, presence: true
 
-  belongs_to :user
+  has_one :user, through: :collection
+  belongs_to :collection
 
   attachment :item_image, type: :image
 

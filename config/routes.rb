@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about', as: :about
   get '/contact_us', to: 'pages#contact', as: :contact
 
+  get '/dashboard', to: 'dashboard#index', as: :dashboard
+
   get '/users/sign_in', to: 'devise/sessions#new', as: :login
 
   resources :items do

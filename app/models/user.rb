@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :items
+  has_many :collections
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable
