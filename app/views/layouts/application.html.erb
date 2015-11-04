@@ -17,7 +17,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><em>turbo</em>trader</a>
+          <%= link_to dashboard_path do %>
+          <div class="turbo_brand navbar-brand">
+            <span class="turbo_logo">turbo</span> <span class="trader_logo">trader</span>
+          </div>
+          <% end %>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -36,8 +40,19 @@
         <!-- Sidebar Menu Items -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li><a href="#"><i class="fa fa-fw fa-th"></i> Dashboard</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-tags"></i> Items</a></li>
+            <li>
+              <%= link_to dashboard_path do %>
+                <i class="fa fa-fw fa-th"></i> Dashboard
+              <% end %>
+            </li>
+
+            <li>
+              <%= link_to items_path do %>
+                <i class="fa fa-fw fa-tags"></i> Items
+              <% end %>
+              </a>
+            </li>
+
             <li><a href="#"><i class="fa fa-fw fa-tasks"></i> Collections</a></li>
           </ul>
         </div>
