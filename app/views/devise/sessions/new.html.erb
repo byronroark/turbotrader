@@ -1,28 +1,39 @@
-<h4><%= t('.sign_in', :default => "Sign in") %></h4>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-4">
+      <div class="login-panel panel panel-default">
+        <div class="panel-heading">
+          <h4><%= t('.sign_in', :default => "Sign in") %></h4>
+        </div>
+        <div class="panel-body">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-group">
+              <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
+            </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form_group">
-    <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
-  </div>
+            <div class="form-group">
+              <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+            </div>
 
-  <div class="form-group">
-    <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
-  </div>
+            <% if devise_mapping.rememberable? -%>
+            <div class="checkbox">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+            <% end -%>
+            <%= f.submit t('.sign_in', :default => "Sign in"), class: "btn btn-success" %>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="checkbox">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+            <%= link_to omniauth_authorize_path(resource_name, :facebook), class: "btn btn-primary" do %>
+            <i class="fa fa-lg fa-facebook-square"></i>
+            <%= t('.sign_in_with_provider', provider: "facebook".titleize, :default => "Sign in with Facebook") %>
+            <% end %>
+
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+            <%= link_to t(".forgot_your_password", :default => "Forgot your password?"), new_password_path(resource_name) %>
+            <% end -%>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end -%>
-  <%= f.submit t('.sign_in', :default => "Sign in"), class: "btn btn-primary" %>
-
-  <%= link_to omniauth_authorize_path(resource_name, :facebook), class: "btn btn-primary" do %>
-  <i class="fa fa-lg fa-facebook"></i>
-  <%= t('.sign_in_with_provider', provider: "facebook".titleize, :default => "Sign in with Facebook") %>
-  <% end %>
-
-  <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
-  <%= link_to t(".forgot_your_password", :default => "Forgot your password?"), new_password_path(resource_name) %>
-  <% end -%>
-<% end %>
+  </div>
+</div>

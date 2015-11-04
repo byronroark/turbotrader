@@ -1,9 +1,12 @@
-<div class="navbar navbar-default">
-  <ul class="list-unstyled list-inline">
-    <li><h1>turbotrader</h1></li>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <ul class="nav navbar-left top-nav">
+    <li><h3><em>turbo</em>trader</h3></li>
     <li><%= link_to 'Home', root_path %></li>
     <li><%= link_to 'About Us', about_path %></li>
     <li><%= link_to 'Contact Us', contact_path %></li>
-    <li><%= link_to 'Sign In', new_user_session_path %></li>
   </ul>
-</div>
+  <ul class="nav navbar-right top-nav">
+    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+    <li><%= link_to 'Login', new_user_session_path %></li>
+  </ul>
+</nav>
