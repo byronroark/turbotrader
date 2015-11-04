@@ -1,0 +1,4 @@
+<% if @search %>
+  <h4>Search results for <%= @search %></h4>
+  <h5>Found <%= pluralize(@items.count, "item") %></h5>
+<% end %>
