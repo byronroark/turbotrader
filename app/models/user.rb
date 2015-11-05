@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
-  has_many :items
+  has_many :items, through: :collections
   has_many :collections
+
+  after_create :add_default_collection
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable
@@ -18,5 +20,9 @@ class User < ActiveRecord::Base
     user.save!
 
     return user
+  end
+
+  def add_default_collection
+    self.collections.create!(name: 'Default')
   end
 end

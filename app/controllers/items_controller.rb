@@ -15,44 +15,40 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def show
+  end
+
   def edit
   end
 
   def create
+    item_params[:collection_id] =
+      current_user.collections.where(name: item_params.delete(:collection)).first_or_create.id
+
     @item = Item.new(item_params)
 
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully added.' }
-        format.json { render :show, status: :created, location: @item }
-      else
-        format.html { render :new }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
+    if @item.save
+      redirect_to @item, flash: { success: 'Item was successfully added.' }
+    else
+      render :new
     end
   end
 
   def update
     @item = Item.find(params[:id])
 
-    respond_to do |format|
-      if @item.update(item_params)
-        format.html { redirect_to @item, notice: "Item was successfully updated." }
-        format.json { render :show, status: :ok, location: @item }
-      else
-        format.html { render :edit }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
+    if @item.update(item_params)
+      redirect_to @item, success: "Item was successfully updated."
+    else
+      flash.now[:error] = "Failed to update this item."
+      render :edit
     end
   end
 
   def destroy
     @item.destroy
 
-    respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully deleted.' }
-      format.json { head :no_content }
-    end
+    redirect_to items_url, notice: 'Item was successfully deleted.'
   end
 
   private
@@ -63,6 +59,6 @@ class ItemsController < ApplicationController
 
   # Whitelisted params.
   def item_params
-    params.require(:item).permit(:title, :description, :collection, :item_image)
+    @item_params ||= params.require(:item).permit(:title, :description, :collection, :item_image)
   end
 end

@@ -1,6 +1,5 @@
 class Item < ActiveRecord::Base
-  validates :title, presence: true, uniqueness: { scope: :user_id, message: "You already have an item with this title." }
-  validates :collection, uniqueness: { scope: :user_id, message: "You already have a collection with this name." }
+  validates :title, presence: true, uniqueness: { message: "You already have an item with this title." }
   validates :description, presence: true
 
   has_one :user, through: :collection
