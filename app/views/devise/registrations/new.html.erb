@@ -22,7 +22,11 @@
             <div class="form-group">
               <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm password" %>
             </div>
-            <%= f.submit t('.sign_in', :default => "Sign up"), class: "btn btn-success" %>
+            <%= f.submit t('.sign_in', :default => "Sign up"), class: "btn btn-lg btn-success btn-block" %>
+            <%= link_to omniauth_authorize_path(resource_name, :facebook), class: "btn btn-lg btn-primary btn-block" do %>
+            <i class="fa fa-lg fa-facebook-square"></i>
+            <%= t('.sign_in_with_provider', provider: "facebook".titleize, :default => "Sign up with Facebook") %>
+            <% end %>
             <%- if controller_name != 'sessions' %>
             <span> Already have an account? <%= link_to t(".sign_in", :default => "Sign in"), new_session_path(resource_name) %>
             <% end -%></span>

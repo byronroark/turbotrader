@@ -14,6 +14,14 @@
  *= require_self
  */
 
+ html {
+   height: 100%;
+ }
+
+ body {
+   height: 100%;
+ }
+
 .turbo_logo {
   font-family: 'Kaushan Script', cursive;
   font-style: italic;
@@ -28,6 +36,10 @@
   color: #fff;
 }
 
+#wrapper, #page-wrapper {
+  height: 100%;
+}
+
 .square {
   border-radius: 0;
 }
@@ -40,4 +52,8 @@
 .breadcrumb>li>a:visited {
   color: #000;
   text-decoration: none;
+}
+
+.remember_me {
+  font-weight: normal;
 }
