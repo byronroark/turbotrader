@@ -9,16 +9,16 @@ gem 'devise-bootstrap-views'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
+# Font Awesome
 gem 'font-awesome-sass'
-
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.1'
-
 # File Uploads
 gem 'refile', require: 'refile/rails'
 gem 'refile-mini_magick'
 gem 'refile-s3'
-
+# Selectize
+gem 'selectize-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -46,7 +46,6 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
