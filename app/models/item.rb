@@ -8,6 +8,6 @@ class Item < ActiveRecord::Base
   attachment :item_image, type: :image
 
   def self.search(search)
-    where("name like ? or collection like ?", "%#{search}%", "%#{search}%")
+    where("title like ?", "%#{search}%")
   end
 end
