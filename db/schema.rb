@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106205057) do
+ActiveRecord::Schema.define(version: 20151109211101) do
 
   create_table "collections", force: :cascade do |t|
     t.string   "name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20151106205057) do
 
   create_table "items", force: :cascade do |t|
     t.string   "title"
-    t.string   "collection_id"
+    t.integer  "collection_id"
     t.string   "item_image_id"
     t.text     "description"
     t.decimal  "price"
