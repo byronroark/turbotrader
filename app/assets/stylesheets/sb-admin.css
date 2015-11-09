@@ -154,6 +154,27 @@ ul.alert-dropdown {
     color: #fff;
 }
 
+.sidebar .fa.arrow:before {
+    content: "\f104";
+}
+
+.sidebar .active > a > .fa.arrow:before {
+    content: "\f107";
+}
+
+.sidebar .nav-second-level li,
+.sidebar .nav-third-level li {
+    border-bottom: none !important;
+}
+
+.sidebar .nav-second-level li a {
+    padding-left: 37px;
+}
+
+.sidebar .nav-third-level li a {
+    padding-left: 52px;
+}
+
 /* Flot Chart Containers */
 
 .flot-chart {
@@ -170,6 +191,10 @@ ul.alert-dropdown {
 
 .huge {
     font-size: 40px;
+}
+
+.sidebar-search {
+    padding: 15px;
 }
 
 .panel-default {
@@ -224,6 +249,24 @@ ul.alert-dropdown {
 
 .panel-darkblue > a:hover {
     color: #031920;
+}
+
+.panel-teal {
+    border-color: #22b0c3;
+}
+
+.panel-teal > .panel-heading {
+    border-color: #22b0c3;
+    color: #fff;
+    background-color: #22b0c3;
+}
+
+.panel-teal > a {
+    color: #22b0c3;
+}
+
+.panel-teal > a:hover {
+    color: #068ea1;
 }
 
 .panel-red {

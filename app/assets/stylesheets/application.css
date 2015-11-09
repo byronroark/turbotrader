@@ -24,6 +24,24 @@
    height: 100%;
  }
 
+ /*#item_list a:link {
+   color: #22b0c3;
+ }
+
+ #item_list a:visited {
+   color: #22b0c3;
+ }
+
+ #item_list a:hover {
+   color: #068ea1;
+ }*/
+
+ .transbg-info {
+   color: #5bc0de;
+   background-color: transparent;
+   transition: all .2s;
+ }
+
  .navbar-inverse {
    border-color: #73ecfc;
    border-width: 0 0 3px 0;
@@ -49,10 +67,6 @@
 
 .square {
   border-radius: 0;
-}
-
-.coolblue {
-  color: #1d7ccd;
 }
 
 .breadcrumb>li>a:link {
