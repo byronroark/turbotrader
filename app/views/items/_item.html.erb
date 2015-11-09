@@ -5,7 +5,9 @@
     <% end %>
   </td>
   <td>
-    <%= item.collection.name %>
+    <% if item.collection %>
+      <%= item.collection.name %>
+    <% end %>
   </td>
   <td>
     <%= item.price %>

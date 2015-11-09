@@ -8,7 +8,9 @@ class ItemsController < ApplicationController
 
   def search
     @search = params[:q]
-    @items = Items.search(@search)
+    @items = Item.search(@search)
+
+    render :index
   end
 
   def new

@@ -35,23 +35,50 @@
             </ul>
           </li>
         </ul>
+
         <!-- Sidebar Menu Items -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li>
+            <li class="sidebar-search">
+              <%= form_tag search_items_path, method: :get do %>
+                <div class="input-group custom-search-form">
+                <%= search_field_tag :q, "", class: "form-control", placeholder: "Search..." %>
+                <span class="input-group-btn">
+                <%= button_tag class: "btn btn-default" do %>
+                <i class="fa fa-search"></i>
+                <% end %>
+                </span>
+                </div>
+              <% end %>
+            </li>
+
+            <li class='<%= controller_name == "dashboard" ? "active" : "" %>'>
               <%= link_to dashboard_path do %>
                 <i class="fa fa-fw fa-th"></i> Dashboard
               <% end %>
             </li>
 
-            <li>
+            <li class='<%= controller_name == "items" ? "active" : "" %>'>
               <%= link_to items_path do %>
                 <i class="fa fa-fw fa-tags"></i> Items
               <% end %>
               </a>
             </li>
-
-            <li><a href="#"><i class="fa fa-fw fa-tasks"></i> Collections</a></li>
+            <li>
+              <a href="javascript:;" data-toggle="collapse" data-target="#collections"><i class="fa fa-fw fa-tasks"></i> Collections <i class="fa fa-fw fa-caret-down"></i></a>
+              <ul class="nav nav-second-level collapse" id="collections">
+                <% Collection.all.each do |collection| %>
+                <li>
+                  <a href="#"><%= collection.name %></a>
+                </li>
+                <% end %>
+                <li>
+                <%= link_to new_item_path do %>
+                <i class="fa fa-plus"></i> Add new collection
+                <% end %>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
     </nav>
