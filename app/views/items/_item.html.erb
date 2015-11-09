@@ -1,5 +1,13 @@
 <tr>
-  <td><%= item.title %></td>
-  <td><%= item.collection.name %></td>
-  <td><%= item.price %></td>
+  <td>
+    <%= link_to item do %>
+    <%= item.title %>
+    <% end %>
+  </td>
+  <td>
+    <%= item.collection.name %>
+  </td>
+  <td>
+    <%= item.price %>
+  </td>
 </tr>

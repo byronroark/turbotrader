@@ -24,6 +24,11 @@
    height: 100%;
  }
 
+ .navbar-inverse {
+   border-color: #73ecfc;
+   border-width: 0 0 3px 0;
+ }
+
 .turbo_logo {
   font-family: 'Kaushan Script', cursive;
   font-style: italic;
@@ -46,6 +51,10 @@
   border-radius: 0;
 }
 
+.coolblue {
+  color: #1d7ccd;
+}
+
 .breadcrumb>li>a:link {
   color: #000;
   text-decoration: none;
@@ -54,6 +63,11 @@
 .breadcrumb>li>a:visited {
   color: #000;
   text-decoration: none;
+}
+
+.breadcrumb>li>a:hover {
+  color: #000;
+  text-decoration: underline;
 }
 
 .remember_me {

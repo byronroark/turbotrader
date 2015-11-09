@@ -18,17 +18,19 @@
         <%= image_tag attachment_url(@item, :item_image, :fill, 200, 200, fallback: "default.png", class: "img-thumbnail") %>
       </p>
       <p>
-        <strong>Title</strong>
+        <strong>Title:</strong>
         <%= @item.title %>
       </p>
       <p>
-        <strong>Description</strong>
+        <strong>Description:</strong>
         <%= @item.description %>
       </p>
       <p>
-        <strong>Collection name</strong>
+        <strong>Collection name:</strong>
         <%= @item.collection.name %>
       </p>
     </div>
   </div>
 <!-- /.row -->
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
