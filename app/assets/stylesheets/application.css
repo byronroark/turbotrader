@@ -24,17 +24,26 @@
    height: 100%;
  }
 
- /*#item_list a:link {
-   color: #22b0c3;
+ #item_list a:link {
+   color: #15396a;
  }
 
  #item_list a:visited {
-   color: #22b0c3;
+   color: #15396a;
  }
 
  #item_list a:hover {
-   color: #068ea1;
- }*/
+   color: #46B8DA;
+ }
+
+ .panel-table {
+   border-color: #ddd;
+ }
+
+ .panel-table > .panel-body {
+   padding: 0;
+   margin-bottom: -20px;
+ }
 
  .transbg-info {
    color: #5bc0de;
