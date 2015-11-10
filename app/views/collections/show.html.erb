@@ -2,11 +2,11 @@
   <div class="row">
       <div class="col-lg-12">
           <h1 class="page-header">
-              <%= @item.title %>
+              <%= @collection.name %>
           </h1>
           <ol class="breadcrumb">
             <li><%= link_to 'Dashboard', dashboard_path %></li>
-            <li class="active"><%= @item.title %></li>
+            <li class="active"><%= @collection.name %></li>
           </ol>
       </div>
   </div>
@@ -15,20 +15,10 @@
   <div class="row">
     <div class="col-lg-6">
       <p>
-        <%= image_tag attachment_url(@item, :item_image, :fill, 200, 200, fallback: "default.png") %>
-      </p>
-      <p>
-        <strong>Title:</strong>
-        <%= @item.title %>
-      </p>
-      <p>
-        <strong>Description:</strong>
-        <%= @item.description %>
-      </p>
-      <p>
         <strong>Collection name:</strong>
-        <%= @item.collection.name %>
+        <%= @collection.name %>
       </p>
+      <!-- Add table of items that belong to collection here -->
     </div>
   </div>
 <hr>
@@ -37,6 +27,6 @@
 <i class="fa fa-mail-reply"></i> Back
 <% end %>
 
-<%= link_to edit_item_path(@item), class: "btn btn-default" do %>
-<i class="fa fa-pencil"></i> Edit Item
+<%= link_to edit_collection_path(@collection), class: "btn btn-default" do %>
+<i class="fa fa-pencil"></i> Edit
 <% end %>

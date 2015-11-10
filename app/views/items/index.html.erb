@@ -20,20 +20,22 @@
   </div>
   <div class="row">
     <div class="col-lg-10 col-md-12 col-sm-12">
-      <div class="table-responsive">
-        <table id="table_id" class="table table-striped">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Collection</th>
-              <th>Current Price</th>
-            </tr>
-          </thead>
-          <tbody id="item_list">
-            <%= render @items %>
-          </tbody>
-        </table>
+      <div class="panel panel-default panel-table">
+        <!-- Default panel contents -->
+        <div class="panel-body">
+          <table id="table_id" class="table table-striped">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Collection</th>
+                <th>Current Price</th>
+              </tr>
+            </thead>
+            <tbody id="item_list">
+              <%= render @items %>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-<!-- /.row -->

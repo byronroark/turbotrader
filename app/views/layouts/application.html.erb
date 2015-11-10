@@ -42,7 +42,7 @@
             <li class="sidebar-search">
               <%= form_tag search_items_path, method: :get do %>
                 <div class="input-group custom-search-form">
-                <%= search_field_tag :q, "", class: "form-control", placeholder: "Search..." %>
+                <%= search_field_tag :q, "", class: "form-control", placeholder: "Search Items..." %>
                 <span class="input-group-btn">
                 <%= button_tag class: "btn btn-default" do %>
                 <i class="fa fa-search"></i>
@@ -67,13 +67,15 @@
             <li>
               <a href="javascript:;" data-toggle="collapse" data-target="#collections"><i class="fa fa-fw fa-tasks"></i> Collections <i class="fa fa-fw fa-caret-down"></i></a>
               <ul class="nav nav-second-level collapse" id="collections">
-                <% Collection.all.each do |collection| %>
+                <% current_user.collections.each do |collection| %>
                 <li>
-                  <a href="#"><%= collection.name %></a>
+                  <%= link_to collection_path(collection) do %>
+                  <%= collection.name %>
+                  <% end %>
                 </li>
                 <% end %>
                 <li>
-                <%= link_to new_item_path do %>
+                <%= link_to new_collection_path do %>
                 <i class="fa fa-plus"></i> Add new collection
                 <% end %>
                 </li>

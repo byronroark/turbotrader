@@ -2,11 +2,11 @@
   <div class="row">
       <div class="col-lg-12">
           <h1 class="page-header">
-              Update Collection
+              Edit <%= @collection.name %>
           </h1>
           <ol class="breadcrumb">
             <li><%= link_to 'Dashboard', dashboard_path %></li>
-            <li class="active">Edit Collection</li>
+            <li class="active">Edit <%= @collection.name %></li>
           </ol>
       </div>
   </div>
@@ -14,9 +14,7 @@
 
   <div class="row">
     <div class="col-lg-6">
-      <%= render 'form' %>
+      <%= render 'collection_form' %>
     </div>
   </div>
 <!-- /.row -->
-<%= link_to 'Show', @item %> |
-<%= link_to 'Back', items_path %>
