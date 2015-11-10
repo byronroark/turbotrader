@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151109211101) do
+ActiveRecord::Schema.define(version: 20151110010448) do
 
   create_table "collections", force: :cascade do |t|
     t.string   "name"
@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(version: 20151109211101) do
   create_table "prices", force: :cascade do |t|
     t.integer  "price"
     t.integer  "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.datetime "item_sold_at"
   end
 
   add_index "prices", ["item_id"], name: "index_prices_on_item_id"
