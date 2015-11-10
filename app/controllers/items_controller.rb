@@ -30,17 +30,20 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
 
     if @item.save
-      redirect_to @item, flash: { success: 'Item was successfully added.' }
+      redirect_to @item, flash: { success: "Item was successfully added." }
     else
       render :new
     end
   end
 
   def update
+    item_params[:collection_id] =
+      current_user.collections.where(name: item_params.delete(:collection)).first_or_create.id
+
     @item = Item.find(params[:id])
 
     if @item.update(item_params)
-      redirect_to @item, success: "Item was successfully updated."
+      redirect_to @item, flash: { success: "Item was successfully updated." }
     else
       flash.now[:error] = "Failed to update this item."
       render :edit
@@ -50,7 +53,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
 
-    redirect_to items_url, notice: 'Item was successfully deleted.'
+    redirect_to items_url, notice: "Item was successfully deleted."
   end
 
   private
