@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 50.times do |i|
-  Price.create(item_id: 13, price: 100 + rand(100), item_sold_at: 5.days.ago - i.days)
+  Price.create(item_id: 3, price: 100 + rand(100), item_sold_at: 5.days.ago - i.days)
 end
