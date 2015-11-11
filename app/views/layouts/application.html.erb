@@ -28,7 +28,9 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i> <%= current_user.first_name %> <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li class="disabled"><a href="#">Edit Profile</a></li>
+              <li>
+                <%= link_to 'Edit Profile', edit_user_registration_path %>
+              </li>
               <li class="disabled"><a href="#">Settings</a></li>
               <li class="divider"></li>
               <li><%= link_to 'Log Out', destroy_user_session_path, { method: :delete } %></li>
@@ -74,6 +76,7 @@
                   <% end %>
                 </li>
                 <% end %>
+                <li class="divider"></li>
                 <li>
                 <%= link_to new_collection_path do %>
                 <i class="fa fa-plus"></i> Add new collection
@@ -86,7 +89,7 @@
     </nav>
 
     <div id="page-wrapper">
-      <div class="container-fluid">
+      <div class="container-fluid turbotrader-container-fluid">
         <% flash.each do |key, value| %>
           <div class="alert alert-dismissable alert-<%= key %>"><%= value %> <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>
         <% end %>
