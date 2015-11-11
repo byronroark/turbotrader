@@ -1,5 +1,14 @@
 #pages-body {
   background-color: #333333;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.landing-tiles {
+  color: black;
+}
+
+.landing-page-icons {
+  font-size: 125px;
 }
 
 .landing-teal-container {

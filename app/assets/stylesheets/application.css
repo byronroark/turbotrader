@@ -26,6 +26,10 @@
    background-color: white;
  }
 
+ body h1 {
+   font-family: 'Ubuntu', sans-serif;
+ }
+
  #item_list a:link {
    color: #167fa4;
  }
@@ -74,9 +78,9 @@
 }
 
 .trader_logo {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 35px;
-  font-weight: 300;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 31px;
+  font-weight: 100;
   color: #fff;
 }
 
