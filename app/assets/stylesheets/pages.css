@@ -23,6 +23,7 @@
   color: white;
   text-align: center;
   font-size: 35px;
+  font-weight: 400;
 }
 
 .ready {
@@ -30,6 +31,7 @@
   color: white;
   text-align: center;
   font-size: 20px;
+  font-weight: 300;
 }
 
 .ready-container {
@@ -39,5 +41,5 @@
   margin: 0 auto;
   border-color: #1db9b4;
   color: #1db9b4;
-  width: 500px;
+  width: 450px;
 }
