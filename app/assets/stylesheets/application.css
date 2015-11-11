@@ -21,19 +21,25 @@
  }
 
  body {
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
    height: 100%;
+   background-color: white;
  }
 
  #item_list a:link {
-   color: #15396a;
+   color: #167fa4;
  }
 
  #item_list a:visited {
-   color: #15396a;
+   color: #167fa4;
  }
 
  #item_list a:hover {
    color: #46B8DA;
+ }
+
+ .panel-activity {
+   border-color: #ddd;
  }
 
  .panel-table {
@@ -43,6 +49,10 @@
  .panel-table > .panel-body {
    padding: 0;
    margin-bottom: -20px;
+ }
+
+ .panel-link {
+   font-size: 16px;
  }
 
  .transbg-info {
@@ -70,10 +80,6 @@
   color: #fff;
 }
 
-#wrapper, #page-wrapper {
-  height: 100%;
-}
-
 .square {
   border-radius: 0;
 }
@@ -95,4 +101,56 @@
 
 .remember_me {
   font-weight: normal;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+}
+
+.turbotrader-container-fluid {
+  padding-bottom: 50px;
+}
+
+.dashboard-tiles-links {
+  text-decoration: none;
+  color: white;
+}
+
+.dashboard-tiles-links:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.item-graph {
+  border-color: #e3e3e3;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 3px 3px 4px #e0e0e0;
+  padding: 20px 4%;
+  margin-bottom: 20px;
+  margin-right: 5px;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+}
+
+.item-list {
+  font-size: 16px;
+}
+
+.price-list {
+  font-size: 22px;
+  font-weight: 500;
+  color: #35b017;
+}
+
+.item-header {
+  font-weight: 300;
+  font-size: 16px;
 }
