@@ -32,10 +32,12 @@
   font-size: 20px;
 }
 
-.button {
-  align-items: center;
+.ready-container {
+  display: flex;
+  justify-content: center;
   border: 1px solid white;
   margin: 0 auto;
   border-color: #1db9b4;
-  color: #1db9b4
+  color: #1db9b4;
+  width: 500px;
 }
