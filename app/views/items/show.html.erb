@@ -1,8 +1,7 @@
-<!-- Page Heading -->
   <div class="row">
       <div class="col-lg-12">
           <h1 class="page-header">
-              <%= @item.title %>
+            <%= @item.title %>
           </h1>
           <ol class="breadcrumb">
             <li><%= link_to 'Dashboard', dashboard_path %></li>
@@ -10,12 +9,11 @@
           </ol>
       </div>
   </div>
-  <!-- /.row -->
 
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-6 col-md-6 col-sm-6">
       <p>
-        <%= image_tag attachment_url(@item, :item_image, :fill, 200, 200, fallback: "default.png") %>
+        <%= image_tag attachment_url(@item, :item_image, :fill, 300, 250, fallback: "default.png") %>
       </p>
       <p>
         <strong>Title:</strong>
@@ -30,13 +28,50 @@
         <%= @item.collection.name %>
       </p>
     </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div id="item-chart"></div>
+    </div>
   </div>
 <hr>
-<!-- /.row -->
-<%= link_to items_path, class: "btn btn-default" do %>
-<i class="fa fa-mail-reply"></i> Back
-<% end %>
 
-<%= link_to edit_item_path(@item), class: "btn btn-default" do %>
-<i class="fa fa-pencil"></i> Edit Item
-<% end %>
+<div class="row">
+  <div class="col-lg-12">
+    <%= link_to items_path, class: "btn btn-default" do %>
+    <i class="fa fa-mail-reply"></i> Back
+    <% end %>
+
+    <%= link_to edit_item_path(@item), class: "btn btn-default" do %>
+    <i class="fa fa-pencil"></i> Edit Item
+    <% end %>
+  </div>
+</div>
+<script>
+  $(document).on("page:change", function() {
+    $('#item-chart').highcharts('StockChart', {
+        rangeSelector: {
+            selected: 1
+        },
+        credits: {
+            enabled: false
+        },
+        xAxis: {
+
+        },
+
+        // <% if @item.price_increase? %>
+        //   color: "green",
+        // <% else %>
+        //   color: "red",
+        // <% end %>
+
+        series : [{
+            name: <%= raw @item.title.to_json %>,
+            data: <%= @item.chart_json %>,
+            tooltip : {
+                valueDecimals: 2
+            },
+            color: '#35b017',
+        }]
+    });
+  });
+</script>

@@ -1,5 +1,5 @@
 <tr>
-  <td>
+  <td class="item-list">
     <%= link_to item do %>
     <%= item.title %>
     <% end %>
@@ -10,6 +10,16 @@
     <% end %>
   </td>
   <td>
-    <%= item.price %>
+    <span class="price-list">$108<i class="fa fa-fw fa-caret-up"></i></span>
+  </td>
+  <td>
+    <div class="btn-toolbar" role="toolbar">
+      <%= button_to edit_item_path(item), method: :get, class: "btn btn-sm btn-default" do %>
+      <i class="fa fa-pencil"></i>
+      <% end %>
+      <%= button_to item, method: :delete, class: "btn btn-sm btn-default", data: { confirm: "Are you sure you want to delete this item?" } do %>
+      <i class="fa fa-times"></i>
+      <% end %>
+    </div>
   </td>
 </tr>

@@ -53,7 +53,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
 
-    redirect_to items_url, notice: "Item was successfully deleted."
+    redirect_to items_url, flash: { notice: "Item was successfully deleted." }
   end
 
   private
