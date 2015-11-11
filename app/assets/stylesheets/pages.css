@@ -1,0 +1,41 @@
+.landing-teal-container {
+  padding: 100px;
+  background-color: #1db9b4;
+}
+
+.landing-black-container {
+  padding: 100px;
+  background-color: black;
+}
+
+.landing-footer-container {
+  padding: 100px;
+  background-color: #333;
+}
+
+.word-mark {
+  color: white;
+  text-align: center;
+  font-size: 100px;
+}
+
+.call-to-action {
+  color: white;
+  text-align: center;
+  font-size: 35px;
+}
+
+.ready {
+  position: relative;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
+.button {
+  align-items: center;
+  border: 1px solid white;
+  margin: 0 auto;
+  border-color: #1db9b4;
+  color: #1db9b4
+}
