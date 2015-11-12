@@ -23,6 +23,6 @@ class User < ActiveRecord::Base
   end
 
   def add_default_collection
-    self.collections.find_or_create_by(name: 'Default')
+    self.collections.create!(name: 'Default')
   end
 end
