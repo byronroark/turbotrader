@@ -8,7 +8,7 @@
             <li><%= link_to 'Items', items_path %></li>
             <% if @item.collection.name.present? %>
             <li>
-              <%= link_to collection_path do %>
+              <%= link_to collection_path(@item.collection) do %>
               <%= @item.collection.name %>
               <% end %>
             </li>
