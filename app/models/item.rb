@@ -30,4 +30,12 @@ class Item < ActiveRecord::Base
   def price_decrease?
 
   end
+
+  def last_price
+    if prices.any?
+      "$#{prices.last.price}"
+    else
+      "-"
+    end
+  end
 end
